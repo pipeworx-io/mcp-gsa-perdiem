@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-gsa-perdiem",
+  "version": "0.1.0",
+  "description": "GSA Per Diem MCP — wraps the GSA Per Diem API v2 (api.gsa.gov)",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "gsa-perdiem"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-gsa-perdiem"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
