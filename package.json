@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-gsa-perdiem",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GSA Per Diem MCP — wraps the GSA Per Diem API v2 (api.gsa.gov)",
   "type": "module",
   "main": "src/index.ts",
