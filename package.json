@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-gsa-perdiem",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "GSA Per Diem MCP — wraps the GSA Per Diem API v2 (api.gsa.gov)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-gsa-perdiem": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "gsa-perdiem"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-gsa-perdiem.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/gsa-perdiem",
   "pipeworx": {
-    "sourceHash": "v1-a54dd74a68797814ae1f14eea814293581b46ee8cd1a68725720b26d76bb23ad",
-    "sourceCommit": "445bacc5596a845c12d6945fbfcdf330ef60dcc4"
+    "mode": "gateway",
+    "slug": "gsa-perdiem",
+    "gatewaySlug": "gsa_perdiem",
+    "sourceHash": "v1-1cb976463b4dad3c59e96bd2388a01a4d62c5df012e1d790cf2ace5296512cf4",
+    "sourceCommit": "4844029e402d6bd2fe735add8abf6d46735f8ed5"
   }
 }
