@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-gsa-perdiem",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "GSA Per Diem MCP — wraps the GSA Per Diem API v2 (api.gsa.gov)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "gsa-perdiem",
     "gatewaySlug": "gsa_perdiem",
-    "sourceHash": "v1-1cb976463b4dad3c59e96bd2388a01a4d62c5df012e1d790cf2ace5296512cf4",
-    "sourceCommit": "4844029e402d6bd2fe735add8abf6d46735f8ed5"
+    "sourceHash": "v1-a6747115f97ace3cf0568829e457c1caf4d85f69333f334eee92717dd59e4672",
+    "sourceCommit": "0ca9712c0ac03bb0121cc7e81b202d0c45ac02ca"
   }
 }
