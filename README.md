@@ -1,15 +1,16 @@
 # mcp-gsa-perdiem
 
-GSA Per Diem MCP — wraps the GSA Per Diem API v2 (api.gsa.gov)
+Unofficial GSA Per Diem MCP — wraps the GSA Per Diem API v2 (api.gsa.gov)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1865+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 2006+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `rates_by_city` | Get US federal per diem rates (government travel lodging and meal allowances) for a city by name and state. Returns the monthly lodging ceiling (per-diem lodging varies by month/season) and the flat M&IE (meals & incidental expenses) daily rate. Example: rates_by_city({ city: "Denver", state: "CO" }). |
-| `rates_by_zip` | Get US federal per diem rates (government travel lodging and meal allowances) for a location by zip code. Returns the monthly lodging ceiling (per-diem lodging varies by month/season) and the flat M&IE (meals & incidental expenses) daily rate. Example: rates_by_zip({ zip: "80202" }). |
+| `rates_by_city` | Get US federal per diem rates (government travel lodging and meal allowances) for a city by name and state. Returns the monthly lodging ceiling (per-diem lodging varies by month/season), the flat M&IE (meals & incidental expenses) daily total, and its breakdown into breakfast, lunch, dinner, incidental expenses and the first/last travel day amount (meals_breakdown). Answers "GSA FY2026 M&IE breakdown for Nashville, TN", "federal per diem for Denver, CO", "government hotel rate cap in San Francisco". Example: rates_by_city({ city: "Denver", state: "CO" }). |
+| `rates_by_zip` | Get US federal per diem rates (government travel lodging and meal allowances) for a location by zip code. Returns the monthly lodging ceiling (per-diem lodging varies by month/season), the flat M&IE (meals & incidental expenses) daily total, and its breakdown into breakfast, lunch, dinner, incidental expenses and the first/last travel day amount (meals_breakdown). Answers "GSA M&IE breakdown for zip 37203", "federal per diem for 80202". Example: rates_by_zip({ zip: "80202" }). |
+| `mie_breakdown` | US federal per diem MEALS AND INCIDENTAL EXPENSES (M&IE) nationwide tier table: the GSA tiers (68, 74, 80, 86, 92 in FY2026) that split a daily M&IE total into breakfast, lunch, dinner and incidental expenses, plus the reduced first/last travel day amount. The table is organised by dollar tier. Use for "how much is the per diem lunch allowance", "what are the GSA M&IE tiers for FY2026", "what is the incidental expense rate". Pass `total` (a daily M&IE total, e.g. 86) to get that tier; omit it to list all tiers. A question that names a city or a zip code is answered by rates_by_city or rates_by_zip, which return that place's M&IE total together with its breakdown. Example: mie_breakdown({ year: 2026, total: 86 }). |
 
 ## Quick Start
 
@@ -55,7 +56,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1865+ data sources. The
+Both URLs reach the same gateway and the same 2006+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 
